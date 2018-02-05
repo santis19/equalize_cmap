@@ -15,6 +15,8 @@ def equalize_cmap(data, bins, cmap='viridis', name="EqualizedCM"):
     cdf = numpy.cumsum(hist)/numpy.float(len(data))
     indices = numpy.linspace(0, 1, bins)
     new_indices = numpy.interp(indices, cdf, indices)
+    new_indices[0] = 0.0
+    new_indices[-1] = 1.0
     cmap_list = cmap(indices)[:, :3]
     # remap the color table
     color_dict = {'red': [], 'green': [], 'blue': []}
