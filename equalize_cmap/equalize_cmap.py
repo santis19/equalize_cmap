@@ -4,7 +4,7 @@ from matplotlib import pyplot
 from matplotlib import colors
 
 
-def equalize_cmap(data, bins, cmap='viridis', name="EqualizedCM"):
+def equalize_cmap(data, bins=256, cmap='viridis', name="EqualizedCM"):
     try:
         cmap = pyplot.get_cmap(cmap)
     except Exception():
